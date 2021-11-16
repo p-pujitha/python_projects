@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block head_title %} Update post {% endblock head_title %}
+
+{% block content %}
+     <div class="container" align="right">
+    <p>
+        <a href="/profile/" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-hand-left" ></span>Back
+        </a></p>
+</div>
+ <div class='col-sm-6 col-sm-offset-3'>
+  <h1> Form </h1>
+
+    <form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+{{ form|crispy}}
+<input type ="submit" class='btn btn-default' value ="Update Post" />
+</form>
+  </div>
+{% endblock content %}

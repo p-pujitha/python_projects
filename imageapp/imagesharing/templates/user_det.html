@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All users</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body >
+  <div class="container" align="right">
+    <p>
+        <a href="/profile/" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-hand-left" ></span>Back
+        </a></p>
+</div><br>
+
+<div class="jumbotron vertical-center">
+	<div class="container" align="center">
+		<h1>Users</h1>
+
+
+        </div>
+    </div>
+<div class="container">
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>User posts</th>
+
+      </tr>
+    </thead>
+
+
+
+    <tbody>
+     {% for user in users %}
+      <tr>
+        <!--<td><a href="listitem{{ list.id }}">{{ list.name }}</a></td>-->
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phonenumber }}</td>
+        <td><a href="http://127.0.0.1:8000/users/posts/{{ user.id }}/user">posts</a></td>
+
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</div>
+
+</body>
+</html>

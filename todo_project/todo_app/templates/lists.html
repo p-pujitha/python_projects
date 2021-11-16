@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo Lists</title>
+</head>
+<body >
+<div class="jumbotron vertical-center">
+	<div class="container" align="center">
+		<h1>TODO LISTS</h1>
+
+
+        </div>
+    </div>
+<div class="container">
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Create Date</th>
+
+      </tr>
+    </thead>
+
+
+
+    <tbody>
+     {% for list in lists %}
+      <tr>
+        <td><a href="listitem{{ list.id }}">{{ list.name }}</a></td>
+        <td>{{ list.create_date }}</td>
+
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</div>
+
+</body>
+</html>

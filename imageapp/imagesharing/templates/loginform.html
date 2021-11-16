@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class='col-sm-6 col-sm-offset-3'>
+  <h1> {{ title }} </h1>
+
+    <form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form | crispy }}
+<input type ="submit" class='btn btn-default' value ="Login" />
+</form><br><br>
+   <div class="container" align="left">
+    <p> <b>Not a registerd user </b>
+        <a href="/register/" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-hand-right" ></span> Register
+        </a>
+    </div>
+  </div>
+
+{% endblock content %}
